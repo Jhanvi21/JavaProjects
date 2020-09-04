@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jhanvi's Portfolio</title>
+    <link rel="stylesheet" href="Styles.css">
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta>
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav-links">
+            <ul>
+                <li class="left"><a href="Jhanvi'sPortfolio.html">Home</a></li>
+                <li><a href="Graphics.html">Graphic Design</a></li>
+                <li><a href="Code.html">Programming</a></li>
+                
+           <!--     <div class="Design">
+                    <button class="dropbtn">Tech Design 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="subtopics">
+                        <a href="#">Arcitecture</a>
+                        <a href="#">Mechanical</a>
+                        <a href="#">Electronics</a>
+                    </div>
+                </div>  -->               
+                
+                <li><a href="Tech Design.html">Tech Design</a></li>
+                <li><a href="Manu.html">Machining</a></li>
+                <li><a class="active" href="CAD.html">3D Modelling</a></li>
+            </ul>
+        </div>        
+        
+        <h2 style="text-align: center">Hundson Train</h2>
+        <br>
+        <p style="margin: 15px">This engine was created in 12th grade. My forth year of using Autodesk Inventor. Created in a group of 5 students total. Finished in 3 months</p>
+        
+        <div class="container">
+            <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img src="\University\Co-op\Website\Photos\Train\Final Render.png" style="width: 80%">
+            </div>
+            
+            <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img src="\University\Co-op\Website\Photos\Train\Left Side View.png" style="width:80%">
+            </div>
+            
+            <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img src="\University\Co-op\Website\Photos\Train\Right Side View.png" style="width:80%">
+            </div>
+            
+            <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img src="\University\Co-op\Website\Photos\Train\Sectional View 1.png" style="width:80%">
+            </div>
+            
+            <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img src="\University\Co-op\Website\Photos\Train\Sectional View 2.png" style="width:80%">
+            </div>
+            
+            <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img src="\University\Co-op\Website\Photos\Train\LeftView (Low).png" style="width:80%">
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+            
+            <div class="row">
+                <div class="column">
+                    <img class="demo cursor" src="\University\Co-op\Website\Photos\Train\Final Render.png" onclick="currentSlide(1)" style="width:100%" alt="Rendering of the Train">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="\University\Co-op\Website\Photos\Train\Left Side View.png" style="width:100%" onclick="currentSlide(2)" alt="Avenger Themed Lights and Colours Rendering - Left View">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="\University\Co-op\Website\Photos\Train\Right Side View.png" style="width:100%" onclick="currentSlide(3)" alt="Avenger Themed Lights and Colours Rendering - Right View">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="\University\Co-op\Website\Photos\Train\Sectional View 1.png" style="width:100%" onclick="currentSlide(4)" alt="Sectional View Horizontal Cut">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="\University\Co-op\Website\Photos\Train\Sectional View 2.png" style="width:100%" onclick="currentSlide(5)" alt="Sectional View Vertical Cut">
+                </div>    
+                <div class="column">
+                    <img class="demo cursor" src="\University\Co-op\Website\Photos\Train\LeftView (Low).png" style="width:100%" onclick="currentSlide(6)" alt="Low Quality rendering of Full Model">
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                var captionText = document.getElementById("caption");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+                captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+        </script>        
+        
+    </div>
+</body>
+<html>
