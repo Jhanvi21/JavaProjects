@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jhanvi's Portfolio</title>
+    <link rel="stylesheet" href="Styles.css">
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta>
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav-links">
+            <ul>
+                <li class="left"><a href="Jhanvi'sPortfolio.html">Home</a></li>
+                <li><a href="Graphics.html">Graphic Design</a></li>
+                <li><a href="Code.html">Programming</a></li>
+                
+           <!--     <div class="Design">
+                    <button class="dropbtn">Tech Design 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="subtopics">
+                        <a href="#">Arcitecture</a>
+                        <a href="#">Mechanical</a>
+                        <a href="#">Electronics</a>
+                    </div>
+                </div>  -->               
+                
+                <li><a href="Tech Design.html">Tech Design</a></li>
+                <li><a href="Manu.html">Machining</a></li>
+                <li><a class="active" href="CAD.html">3D Modelling</a></li>
+            </ul>
+        </div>        
+
+<!-- *********************************************** FIRST SLIDE GALLERY ***********************************************-->
+        <h2 style="text-align: center">Hundson Train</h2>
+        <br>
+        <p style="margin: 15px">This engine was created in 12th grade. My forth year of using Autodesk Inventor. Created in a group of 5 students total. Finished in 3 months</p>
+        
+        <div class="container">
+            <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img src="\University\Co-op\Website\Photos\Train\Final Render.png" style="width: 80%">
+            </div>
+            
+            <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img src="\University\Co-op\Website\Photos\Train\Left Side View.png" style="width:80%">
+            </div>
+            
+            <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img src="\University\Co-op\Website\Photos\Train\Right Side View.png" style="width:80%">
+            </div>
+            
+            <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img src="\University\Co-op\Website\Photos\Train\Sectional View 1.png" style="width:80%">
+            </div>
+            
+            <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img src="\University\Co-op\Website\Photos\Train\Sectional View 2.png" style="width:80%">
+            </div>
+            
+            <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img src="\University\Co-op\Website\Photos\Train\LeftView (Low).png" style="width:80%">
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+            
+            <div class="row">
+                <div class="column">
+                    <img class="demo cursor" src="\University\Co-op\Website\Photos\Train\Final Render.png" onclick="currentSlide(1)" style="width:100%" alt="Rendering of the Train">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="\University\Co-op\Website\Photos\Train\Left Side View.png" style="width:100%" onclick="currentSlide(2)" alt="Avenger Themed Lights and Colours Rendering - Left View">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="\University\Co-op\Website\Photos\Train\Right Side View.png" style="width:100%" onclick="currentSlide(3)" alt="Avenger Themed Lights and Colours Rendering - Right View">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="\University\Co-op\Website\Photos\Train\Sectional View 1.png" style="width:100%" onclick="currentSlide(4)" alt="Sectional View Horizontal Cut">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="\University\Co-op\Website\Photos\Train\Sectional View 2.png" style="width:100%" onclick="currentSlide(5)" alt="Sectional View Vertical Cut">
+                </div>    
+                <div class="column">
+                    <img class="demo cursor" src="\University\Co-op\Website\Photos\Train\LeftView (Low).png" style="width:100%" onclick="currentSlide(6)" alt="Low Quality rendering of Full Model">
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                var captionText = document.getElementById("caption");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+                captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+        </script>        
+<!-- *********************************************** VIDEO GALLERY ***********************************************
+        <video id="myVid" width="320" height="240" style="margin: 20px" controls>
+            <source src="\University\Co-op\Website\Photos\Train\Final Video Render.wmv">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="vid01">
+            <div id="caption"></div>
+        </div>
+        
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+            
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var vid = document.getElementById("myVid");
+            var modalVid = document.getElementById("vid01");
+            var captionText = document.getElementById("caption");
+            vid.onclick = function(){
+                modal.style.display = "block";
+                modalVid.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+            
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() { 
+                modal.style.display = "none";
+            }
+        </script>
+        
+ *********************************************** IMAGE SLIDE GALLERY 2 ***********************************************-->
+        
+        <h2 style="text-align: center">Saumard Twin Steam Engine</h2>
+        <br>
+        <p style="margin: 15px">This engine was created in 11th grade. My third year of using Autodesk Inventor. Finished in 2 months</p>
+        
+        <div class="container2">
+            <div class="mySlides2">
+                <div class="numbertext">1 / 5</div>
+                <img src="\University\Co-op\Website\Photos\Soumard Twin Engine\Final Image.png" style="width: 80%">
+            </div>
+            
+            <div class="mySlides2">
+                <div class="numbertext">2 / 5</div>
+                <img src="\University\Co-op\Website\Photos\Soumard Twin Engine\4.jpg" style="width:80%">
+            </div>
+            
+            <div class="mySlides2">
+                <div class="numbertext">3 / 5</div>
+                <img src="\University\Co-op\Website\Photos\Soumard Twin Engine\Final Engine.png" style="width:80%">
+            </div>
+            
+            <div class="mySlides2">
+                <div class="numbertext">4 / 5</div>
+                <img src="\University\Co-op\Website\Photos\Soumard Twin Engine\2.jpg" style="width:80%">
+            </div>
+            
+            <div class="mySlides2">
+                <div class="numbertext">5 / 5</div>
+                <img src="\University\Co-op\Website\Photos\Soumard Twin Engine\1.jpg" style="width:80%">
+            </div>
+            
+            <a class="prev" onclick="plusSlides2(-1)">❮</a>
+            <a class="next" onclick="plusSlides2(1)">❯</a>
+            
+            <div class="caption-container">
+                <p id="caption2"></p>
+            </div>
+            
+            <div class="row2">
+                <div class="column2">
+                    <img class="demo2 cursor" src="\University\Co-op\Website\Photos\Soumard Twin Engine\Final Image.png" onclick="currentSlide2(1)" style="width:100%" alt="Twin Engine">
+                </div>
+                <div class="column2">
+                    <img class="demo2 cursor" src="\University\Co-op\Website\Photos\Soumard Twin Engine\4.jpg" style="width:100%" onclick="currentSlide2(2)" alt="Twin Engine">
+                </div>
+                <div class="column2">
+                    <img class="demo2 cursor" src="\University\Co-op\Website\Photos\Soumard Twin Engine\Final Engine.png" style="width:100%" onclick="currentSlide2(3)" alt="Twin Engine">
+                </div>
+                <div class="column2">
+                    <img class="demo2 cursor" src="\University\Co-op\Website\Photos\Soumard Twin Engine\2.jpg" style="width:100%" onclick="currentSlide2(4)" alt="Twin Engine">
+                </div>
+                <div class="column2">
+                    <img class="demo2 cursor" src="\University\Co-op\Website\Photos\Soumard Twin Engine\1.jpg" style="width:100%" onclick="currentSlide2(5)" alt="Twin Engine">
+                </div>    
+            </div>
+        </div>
+        
+        <script>
+            var slideIndex = 1;
+            showSlides2(slideIndex);
+            
+            // Next/previous controls
+            function plusSlides2(n) {
+                showSlides2(slideIndex += n);
+            }
+            
+            // Thumbnail image controls
+            function currentSlide2(n) {
+                showSlides2(slideIndex = n);
+            }
+            
+            function showSlides2(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides2");
+                var dots = document.getElementsByClassName("demo2");
+                var captionText = document.getElementById("caption2");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                
+                slides[slideIndex -1].style.display = "block";
+                dots[slideIndex -1].className += " active";
+                captionText.innerHTML = dots[slideIndex -1].alt;
+            } 
+        </script>    
+        
+        
+        
+    </div>
+</body>
+<html>
